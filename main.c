@@ -22,7 +22,8 @@ int main(int argc, char const *argv[])
 	
 	do{
 		unsigned int score = 0;
-
+		finded = 0;
+		
 		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 		printf("Solo mode or Duo mode ? :\n");
 		printf("Press 1 or 2 : \n");
