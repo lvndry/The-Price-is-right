@@ -73,6 +73,7 @@ int main(int argc, char const *argv[])
 		//printf("%d\n", random);
 		
 		do{
+			finded = 0;
 			printf("Enter a number : ");
 			int check = scanf("%d", &player); //retourne 0 si c'est pas un chiffre
 			getchar();
@@ -87,17 +88,17 @@ int main(int argc, char const *argv[])
 			score++;
 			
 			if(player > random){
-				if(player-random > 20)
+				if(player-random > 15)
 					printf("Cold! (Advise: I think about a lower number)\n");
-				if(player-random <= 20 && player-random > 5)
+				else if(player-random <= 15 && player-random > 5)
 					printf("Almost but it still to high..\n");
 				else printf("You are so close!! (Just a bit less)\n");
 			}
 			
 			if(player < random){
-				if(random-player > 20)
+				if(random-player > 15)
 					printf("Cold! (Advise: I think about a higer number)\n");
-				if(random-player <= 20 && random-player > 5)
+				else if(random-player <= 15 && random-player > 5)
 					printf("Almost but it still to low..\n");
 				else printf("You are so close!! (Just a bit more)\n");
 			}
