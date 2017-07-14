@@ -19,11 +19,14 @@
 
 #define MIN 1
 
-int level();
-void registerScore(char *name, int score);
-int getAletNumber(int MAX);
-void putscore(int random);
 int available(int random);
-int bestScore(int max);
+int chooseLevel(int mode);
+int chooseMode();
+int game(int random);
+int getAletNumber(int MAX);
+int isBestScore(int max);
+int level();
 int max(int max);
 void printBestScores();
+void putscore(int random);
+void registerScore(char *name, int score);
