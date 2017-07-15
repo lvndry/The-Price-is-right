@@ -1,9 +1,10 @@
 # The-Price-is-right
   Will you found what I am thinking about ...
-  You have to found what number is thinking the computer about within 10 chances
+  You have to found what number the computer is thinking  about
 
 ## Options : 
-- Solo/Duo mode : Player 1 choose a number, player 2 have to guess
+- Solo mode : A random number is chosen and the player have to guess
+- Duo mode : Player 1 choose a number, player 2 have to guess
 - 10 levels of difficulty : 1-100, 1-200...1-1000
 
 ## Compile
