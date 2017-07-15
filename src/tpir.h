@@ -1,3 +1,9 @@
+/*** 
+	 The price is right
+     Author : Monga Landry 
+	 August 2017 
+***/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -15,7 +21,6 @@
 #define LEVEL8 800
 #define LEVEL9 900
 #define LEVEL10 1000
-
 
 #define MIN 1
 

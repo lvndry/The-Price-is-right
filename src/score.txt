@@ -1,4 +1,4 @@
 Landry : 1
-Christine : 8
 Jean : 8
 Landry : 2
+John : 15

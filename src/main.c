@@ -1,3 +1,9 @@
+/*** 
+	 The price is right
+     Author : Monga Landry 
+	 August 2017 
+***/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -25,14 +31,15 @@ int main(int argc, char const *argv[])
 		finded = 0;
 	
 		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+		
 		mode = chooseMode(); //Choose solo or duo mode
 		
 		for (int i = 0; i < 100; ++i)
 			printf("\n");
 
 		int random = chooseLevel(mode); //Returns a number, random if solo mode, a chosen number if duo mode
-		printf("%d\n", random);
-		putscore(random); //Make this number unavaible for next time
+	
+		putscore(random); //Makes this number unavaible for next time
 		
 		do{
 			finded = game(random); //Launch the game, returns 1 if random is guessed
@@ -40,10 +47,11 @@ int main(int argc, char const *argv[])
 		}while(finded == 0);
 
 		printf("\n\n\n");
-		printf("Congrats you found what number I was thinking about!! You are more intelligent than I though\n");
+		printf("Congrats you've found what number I was thinking about!! You are more intelligent than I though\n");
 		
 		printf("===== LAST SCORES =====\n");
 		 	printBestScores();
+
 		printf("\n\n\n\n");
 
 		if(isBestScore(score))

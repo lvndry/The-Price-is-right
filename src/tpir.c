@@ -1,3 +1,9 @@
+/*** 
+	 The price is right
+     Author : Monga Landry 
+	 August 2017 
+***/
+
 #include "tpir.h"
 
 int available(int random){ //Check if number has never been used before
@@ -19,7 +25,7 @@ int available(int random){ //Check if number has never been used before
 	return 1;
 }
 
-int isBestScore(int max){
+int isBestScore(int max){ //check if max is the highest number
 	FILE* score = fopen("score.txt", "r");
 	int nbr;
 	char name[20];
@@ -39,16 +45,18 @@ int isBestScore(int max){
 
 int chooseMode(){
 	unsigned int mode;
+	
 	printf("Solo mode or Duo mode ? :\n");
 	printf("Press 1 or 2 : \n");
 	unsigned int rep = scanf("%u", &mode); //scanf returns 0 if not a number
 		
-	while(!rep || mode < 1|| mode > 2){
+	while(!rep || mode < 1|| mode > 2){ // !rep --> rep == 0
 		printf("NOT AVAILABLE VALUE!\n");
 		printf("Solo mode or Duo mode ? :\n");
 		printf("Press 1 or 2 : \n");
 		rep = scanf("%d", &mode);
 	}
+
 	return mode;
 }
 
@@ -210,7 +218,7 @@ void printBestScores(){ //print all best scores
 	char name[20];
 	int bscore, i = 1;
 
-	rewind(postfile);
+	rewind(score);
 
 	while(!feof(score)){
 		fscanf(score, "%s : %d", name, &bscore);
