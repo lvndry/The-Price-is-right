@@ -24,14 +24,14 @@
 
 #define MIN 1
 
-int available(int random);
-int chooseLevel(int mode);
-int chooseMode();
-int game(int random);
-int getAletNumber(int MAX);
+int available(int random);	//Check if number has never been used before
+int chooseMode();	//Choose game mode solo or duo
+int game(int random);	//Launch the game
+int getAletNumber(int MAX); 
+int getRandom(int mode);	//Returns a number depending on the mode
 int isBestScore(int max);
-int level();
-int max(int max);
-void printBestScores();
-void putscore(int random);
-void registerScore(char *name, int score);
+int level();	//returns the chosen level
+int max(int level); //returns max value depending on the level
+void printBestScores();	//print all best scores
+void putNum(int random);	 //Makes a number unavailabe for next times
+void registerScore(char *name, int score);	 //register a new best score

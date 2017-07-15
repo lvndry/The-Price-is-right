@@ -37,9 +37,9 @@ int main(int argc, char const *argv[])
 		for (int i = 0; i < 100; ++i)
 			printf("\n");
 
-		int random = chooseLevel(mode); //Returns a number, random if solo mode, a chosen number if duo mode
+		int random = getRandom(mode); //Returns a number, random if solo mode, a chosen number if duo mode
 		//printf("%d\n", random);
-		putscore(random); //Makes this number unavaible for next time
+		putNum(random); //Makes this number unavaible for next time
 		
 		do{
 			finded = game(random); //Launch the game, returns 1 if random is guessed

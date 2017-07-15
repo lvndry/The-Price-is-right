@@ -25,25 +25,7 @@ int available(int random){ //Check if number has never been used before
 	return 1;
 }
 
-int isBestScore(int max){ //check if max is the highest number
-	FILE* score = fopen("score.txt", "r");
-	int nbr;
-	char name[20];
-
-	while(!feof(score)){
-		fscanf(score, "%s : %d", name, &nbr);
-		
-		if(nbr < max){
-			fclose(score);
-			return 0;
-		}
-	}
-
-	fclose(score);
-	return 1; 
-}
-
-int chooseMode(){
+int chooseMode(){ //Choose game mode solo or duo
 	unsigned int mode;
 	
 	printf("Solo mode or Duo mode ? :\n");
@@ -60,40 +42,7 @@ int chooseMode(){
 	return mode;
 }
 
-int chooseLevel(int mode){
-	int random;
-	if(mode == 1){
-		printf("Choose the level : \n");
-			
-		int diff = level(); //returns the level
-		int MAX = max(diff); //returns the maximum number thant can be randomly chosen depending on the level
-
-		while(!available(random)) //while the number is not available it choose an other one
-			random = getAletNumber(MAX);
-
-		printf("Well let me think...\n");
-		sleep(2);
-		printf("I have a number!\n\n");
-
-	}
-
-	else {
-		printf("Player 1 choose a number :\n");
-		scanf("%d", &random);
-		getchar();
-			
-		while(!available(random)){ //Check if the number has never been chosen 
-			printf("Number not available\n");
-			printf("Player 1 choose an other number : ");
-			scanf("%d", &random);
-			getchar();
-		}
-	}
-
-	return random;
-}
-
-int game(int random){
+int game(int random){ //Launch the game
 	int guess;
 
 	printf("Enter a number : ");
@@ -134,6 +83,57 @@ int getAletNumber(int MAX){ //return an alet number the max changes
 	return (rand() % (MAX - MIN + 1)) + MIN;
 }
 
+int getRandom(int mode){ //Returns number depending on the mode
+	int random;
+	if(mode == 1){
+		printf("Choose the level : \n");
+			
+		int lvl = level(); //returns the level
+		int MAX = max(lvl); //returns the maximum number thant can be randomly chosen depending on the level
+
+		while(!available(random)) //while the number is not available it choose an other one
+			random = getAletNumber(MAX);
+
+		printf("Well let me think...\n");
+		sleep(2);
+		printf("I have a number!\n\n");
+
+	}
+
+	else {
+		printf("Player 1 choose a number :\n");
+		scanf("%d", &random);
+		getchar();
+			
+		while(!available(random)){ //Check if the number has never been chosen 
+			printf("Number not available\n");
+			printf("Player 1 choose an other number : ");
+			scanf("%d", &random);
+			getchar();
+		}
+	}
+
+	return random;
+}
+
+int isBestScore(int max){ //check if max is the highest number
+	FILE* score = fopen("score.txt", "r");
+	int nbr;
+	char name[20];
+
+	while(!feof(score)){
+		fscanf(score, "%s : %d", name, &nbr);
+		
+		if(nbr < max){
+			fclose(score);
+			return 0;
+		}
+	}
+
+	fclose(score);
+	return 1; 
+}
+
 int level(){ //returns the chosen level
 	unsigned short level;
 
@@ -158,10 +158,10 @@ int level(){ //returns the chosen level
 	return level;
 }
 
-int max(int diff){ //returns a max depending on the level
+int max(int level){ //returns a max depending on the level
 	int MAX;
 
-	switch(diff){
+	switch(level){
 		case 1 :
 		MAX = LEVEL1;
 		break;
@@ -205,14 +205,6 @@ int max(int diff){ //returns a max depending on the level
 	return MAX;
 }
 
-void putscore(int random){ //Makes a number unavailabe for next times
-	FILE* cancel = fopen("cancel.txt", "a+");
-
-	fprintf(cancel, "%d\n", random);
-
-	fclose(cancel);
-}
-
 void printBestScores(){ //print all best scores
 	FILE* score = fopen("score.txt", "r");
 	char name[20];
@@ -226,6 +218,14 @@ void printBestScores(){ //print all best scores
 		i++;
 	}
 	fclose(score);
+}
+
+void putNum(int random){ //Makes a number unavailabe for next times
+	FILE* cancel = fopen("cancel.txt", "a+");
+
+	fprintf(cancel, "%d\n", random);
+
+	fclose(cancel);
 }
 
 void registerScore(char *name, int score){ //register a new best score
