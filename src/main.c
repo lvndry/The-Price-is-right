@@ -38,7 +38,7 @@ int main(int argc, char const *argv[])
 			printf("\n");
 
 		int random = chooseLevel(mode); //Returns a number, random if solo mode, a chosen number if duo mode
-	
+		//printf("%d\n", random);
 		putscore(random); //Makes this number unavaible for next time
 		
 		do{
