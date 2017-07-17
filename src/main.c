@@ -41,6 +41,9 @@ int main(int argc, char const *argv[])
 		//printf("%d\n", random);
 		putNum(random); //Makes this number unavaible for next time
 		
+		for(int i = 0; i < 200; i++)
+			printf("\n");
+
 		do{
 			finded = game(random); //Launch the game, returns 1 if random is guessed
 			score++;

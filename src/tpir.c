@@ -56,7 +56,7 @@ int game(int random){ //Launch the game
 		check = scanf("%d", &guess);	
 	}
 
-	//Says if you are about to find the word or if you are far away of the answer
+	//Says if you are about to find the number or if you are far away of the answer
 	if(guess > random){
 		if(guess-random > 15)
 			printf("Cold! (Advise: I think about a lower number)\n");
