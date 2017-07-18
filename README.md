@@ -11,8 +11,8 @@
  - To begin the game press 'o'
    ![Alt Text](screenshots/begin.png?raw=true "Press 'O' to begin")
  
- - You can choose between solo or duo mode
-    ![Alt Text](screenshots/gamemode.png?raw=true "Press 1 or 2 to choose a mode")
+ - You can choose between playing alone or with someone else
+   ![Alt Text](screenshots/gamemode.png?raw=true "Press 1 or 2 to choose a mode")
  
  - In solo mode you can choose the level of difficulty between 1 to 10. Then the number is chosen randomly and can't be chosen again
    ![Alt Text](screenshots/level.png?raw=true "You can press 1 to 10 to choose a level")
