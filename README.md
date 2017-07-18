@@ -21,10 +21,10 @@
    ![Alt Text](screenshots/advise.png?raw=true "The program tell you if you're about to find the number or not")
  
  - Once you've found the number your score (the number of guesses before finding the number) is saved with your name
-   ![Alt Text](screenshots/lastscore.png?raw=true "Your score is saved at the end of the game")
+   ![Alt Text](screenshots/lastscores.png?raw=true "Your score is saved at the end of the game")
  
  - In duo mode the game is the same. However here a first player have to choose the number and the seconde has to find it
-   ![Alt Text](screenshots/pdui.png?raw=true "In duo mode player 1 choose the number to guess")
+   ![Alt Text](screenshots/pduo.png?raw=true "In duo mode player 1 choose the number to guess")
  
  - Finally you can restart by pressing Enter to play or stop playing by pressing 'q'
    ![Alt Text](screenshots/restart.png?raw=true "You can restart or quit the game easily")
